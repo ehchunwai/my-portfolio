@@ -1,0 +1,77 @@
+﻿
+$main: #111418;
+
+.theme-dark {
+    .side-bar {
+        background-color: $main;
+    }
+
+    ul > li > a {
+        color: #fff !important;
+    }
+
+
+    .display-1 {
+        color: #fff;
+    }
+
+    .bg-dark-1 {
+        background-color: #212529 !important;
+    }
+
+    .bg-dark-2 {
+        background-color: #343a40 !important;
+    }
+
+    .aboutme-main {
+        p {
+            color: #fff;
+        }
+    }
+
+    .skills-main {
+        span {
+            color: #fff;
+        }
+
+        p {
+            color: #fff;
+        }
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $main;
+    }
+
+    .card-default {
+        background-color: #141414;
+    }
+
+    .card-grid {
+        background-color: #212529;
+        border-color: #F7D18D;
+    }
+
+    .card-header {
+        border-color: #F7D18D;
+        color: #fff;
+    }
+
+    .card-body {
+        .card-title {
+            color: #fff;
+        }
+
+        ul > li {
+            color: #fff;
+        }
+
+        h4 {
+            color: #fff;
+        }
+
+        .card-text {
+            color: #fff;
+        }
+    }
+}

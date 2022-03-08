@@ -1,0 +1,22 @@
+﻿$main: #ffffff;
+
+$color-1: #3C8CDE;
+$color-2: #5098E1;
+$color-3: #63A3E5;
+$color-4: #77AFE8;
+$color-5: #8ABAEB;
+$color-6: #9EC6EF;
+$color-7: #B1D1F2;
+$color-8: #C5DDF5;
+$color-9: #D8E8F8;
+$color-10: #ECF4FC;
+
+.theme-light {
+    .side-bar {
+        background-color: $color-5;
+    }
+
+    ul > li > a {
+        color: #000 !important;
+    }
+}

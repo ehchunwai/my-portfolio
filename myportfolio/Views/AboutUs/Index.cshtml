@@ -1,0 +1,52 @@
+﻿
+@{
+    string Age = ViewData.ContainsKey("Age") ? (string)ViewData["Age"] : "";
+    int YearsInService = ViewData.ContainsKey("YearsInService") ? (int)ViewData["YearsInService"] : 0;
+    Profile Profile = ViewData.ContainsKey("Profile") ? (Profile)ViewData["Profile"] : null;
+    string Language = ViewData.ContainsKey("Language") ? (string)ViewData["Language"] : "";
+}
+<div class="aboutme-main h-100 w-100 section bg-dark-1">
+    <div class="container px-5">
+
+        <div class="position-relative d-flex text-center mb-5 justify-content-center">
+            <h1 class="display-1 text-center">About Me</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-7">
+                <p>
+                @Profile.Quote;
+                </p>
+            </div>
+            <div class="col-5 personal-info">
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Age: </b>@Age</li>
+                    <li class="list-group-item"><b>Contact No: </b>@Profile.ContactNo</li>
+                    <li class="list-group-item"><b>Email: </b>@Profile.Email</li>
+                    <li class="list-group-item"><b>Address: </b>@Profile.Address</li>
+                    <li class="list-group-item"><b>Language: </b>@Language</li>
+                </ul>
+            </div>
+        </div>
+        <div class="brand">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="featured-box text-center">
+                        <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0" data-to="10">@YearsInService</span>+</h4>
+                        <p class="mb-0">Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="featured-box text-center">
+                        <h4 class="text-12 text-muted mb-0"><span class="counter" data-from="0" data-to="10">@Profile.NoOfProjectCompleted</span>+</h4>
+                        <p class="mb-0">Project Done</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* must be placed at the bottom for css to be applied *@
+<link rel="stylesheet" href="~/Views/AboutUs/aboutme.css" />
+<link rel="stylesheet" href="~/Views/AboutUs/aboutme.dark.css" />

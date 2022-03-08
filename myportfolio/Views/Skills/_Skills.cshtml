@@ -1,0 +1,14 @@
+﻿@{
+    myportfolio.Models.SkillModel Skill = ViewData.ContainsKey("Skill") ? (myportfolio.Models.SkillModel)ViewData["Skill"] : null;
+}
+
+@if (Skill != null)
+{
+    string percent = string.Format("{0}%", Skill.Level);
+    string className = string.Format("progress-bar-{0}", Skill.Level);
+
+    <span>@Skill.Language</span>
+    <div class="progress">
+        <div class="progress-bar @className" role="progressbar" style="width: @percent" aria-valuenow="@Skill.Level" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+}

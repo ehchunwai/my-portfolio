@@ -1,0 +1,6 @@
+﻿.theme-light .side-bar {
+  background-color: #8ABAEB;
+}
+.theme-light ul > li > a {
+  color: #000 !important;
+}

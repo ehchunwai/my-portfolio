@@ -1,0 +1,34 @@
+﻿[
+  {
+    "outputFile": "Views/Home/home.css",
+    "inputFile": "Views/Home/home.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/theme-dark.css",
+    "inputFile": "wwwroot/css/theme-dark.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/theme-light.css",
+    "inputFile": "wwwroot/css/theme-light.scss"
+  },
+  {
+    "outputFile": "Views/Skills/Skills.css",
+    "inputFile": "Views/Skills/Skills.scss"
+  },
+  {
+    "outputFile": "Views/AboutUs/aboutme.css",
+    "inputFile": "Views/AboutUs/aboutme.scss"
+  },
+  {
+    "outputFile": "Views/AboutUs/aboutme.dark.css",
+    "inputFile": "Views/AboutUs/aboutme.dark.scss"
+  },
+  {
+    "outputFile": "Views/Testimonial/testimonial.css",
+    "inputFile": "Views/Testimonial/testimonial.scss"
+  },
+  {
+    "outputFile": "Views/Projects/projects.css",
+    "inputFile": "Views/Projects/projects.scss"
+  }
+]

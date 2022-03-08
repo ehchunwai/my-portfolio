@@ -1,0 +1,26 @@
+﻿@{
+    myportfolio.Models.MilestoneModel Milestone = ViewData.ContainsKey("Milestone") ? (myportfolio.Models.MilestoneModel)ViewData["Milestone"] : null;
+}
+
+@if (Milestone != null)
+{
+    <div class="card card-default h-100">
+        <h6 class="card-header"><span class="badge bg-info text-dark">@Milestone.Year</span> @Milestone.Company</h6>
+        @*<div class="card-body h-100" style="">*@
+        <div class="card-body" style="">
+            <h5 class="card-title">@Milestone.Position</h5>
+            @*<p class="card-text">@Milestone.Description</p>*@
+            <ul>
+                @foreach (var item in Milestone.PointFormList)
+                {
+                    <li>
+                        @item
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="card-footer text-muted text-center">
+            @Milestone.RelativeDate
+        </div>
+    </div>
+}

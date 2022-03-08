@@ -1,0 +1,95 @@
+﻿.custom-bg {
+  z-index: 0;
+  /*background-image: url(../../wwwroot/media/profile.jpg);*/
+  /*background-image: url(../../media/profile.jpg);*/
+  /*   background-image: url(../../media/not-found.png);*/
+  /*background-image: url(../../media/cover.jpg);*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 0px;
+  /*transition: background-image 300ms ease-in 200ms;*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
+.mask {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6; }
+
+.home-main {
+  z-index: 2;
+  position: relative; }
+
+/*
+For "n" images You must define:
+a=presentation time for one image
+b=duration for cross fading
+Total animation-duration is of course t=(a+b)*n
+
+animation-delay = t/n or = a + b*/
+/*Percentage for keyframes:
+
+0%
+a/t*100%
+(a+b)/t*100% = 1/n*100%
+100%-(b/t*100%)
+100%*/
+/*7 sec delay each image*/
+/*t=14*/
+/*a=5*/
+/*b=2*/
+/*n=2*/
+/*0
+36
+50
+86
+100*/
+/*3 sec delay each image*/
+/*t=8*/
+/*a=3*/
+/*b=1*/
+/*n=2*/
+@keyframes cf4FadeInOut {
+  0% {
+    opacity: 1; }
+  37.5% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  87.5% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+#cf4a div:nth-of-type(2) {
+  animation-delay: 4s; }
+
+#cf4a div {
+  -webkit-animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 8s;
+  -moz-animation-name: cf4FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 8s;
+  -o-animation-name: cf4FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 8s;
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s; }
+
+#cf4a div {
+  position: absolute;
+  left: 0; }

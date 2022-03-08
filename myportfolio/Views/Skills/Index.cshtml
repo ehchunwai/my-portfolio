@@ -1,0 +1,56 @@
+﻿@{
+    //List<myportfolio.Models.SkillModel> Skills = ViewData.ContainsKey("Skills") ? (List<myportfolio.Models.SkillModel>)ViewData["Skills"] : new List<myportfolio.Models.SkillModel>();
+
+    Dictionary<TypeValues, List<SkillModel>> Skills = ViewData.ContainsKey("Skills") ? (Dictionary<TypeValues, List<SkillModel>>)ViewData["Skills"] : new Dictionary<TypeValues, List<SkillModel>>();
+    Profile Profile = ViewData.ContainsKey("Profile") ? (Profile)ViewData["Profile"] : null;
+}
+
+
+<div class="skills-main h-100 w-100 section bg-dark-1">
+    <div class="container px-5 h-100">
+        <div class="position-relative d-flex text-center mb-5 justify-content-center">
+            <h1 class="display-1 text-center">Skills</h1>
+        </div>
+
+        <div class="row p-2" style="height: calc(100% - 6rem); overflow-y:auto;">
+            <p>@Profile.SkillsOverview</p>
+            <div class="col-4 mt-3">
+                <span><b>Programming Language</b></span>
+                @if (Skills.ContainsKey(TypeValues.Programming))
+                {
+                    foreach (var item in Skills[TypeValues.Programming])
+                    {
+                        <div class="mt-2">
+                            @await Html.PartialAsync("~/Views/Skills/_Skills.cshtml", new ViewDataDictionary(new Microsoft.AspNetCore.Mvc.ModelBinding.EmptyModelMetadataProvider(),
+                new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary()) { { "Skill", item } })
+                        </div>
+                    }
+                }
+            </div>
+
+            <div class="col-4 mt-3">
+                <span><b>Database</b></span>
+                @if (Skills.ContainsKey(TypeValues.Database))
+                {
+                    foreach (var item in Skills[TypeValues.Database])
+                    {
+                        <div class="mt-2">
+                            @await Html.PartialAsync("~/Views/Skills/_Skills.cshtml", new ViewDataDictionary(new Microsoft.AspNetCore.Mvc.ModelBinding.EmptyModelMetadataProvider(),
+                new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary()) { { "Skill", item } })
+                        </div>
+                    }
+                }
+            </div>
+
+            <div class="col-4 mt-3">
+                <span><b>Other</b></span>
+                @foreach (var item in Profile.OtherList)
+                {
+                    <p>@item</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/Views/Skills/Skills.css" />

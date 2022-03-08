@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_Layout2";
+    List<Project> ProjectList = ViewData.ContainsKey("ProjectList") ? (List<Project>)ViewData["ProjectList"] : new List<Project>();
+}
+
+@section styles {
+<link rel="stylesheet" href="~/Views/Projects/projects.css" />
+}
+
+@section scripts {
+<script src="~/Views/Projects/projects.js"></script>
+}
+
+<div class="projects-main h-100 w-100 section bg-dark-2">
+    <div class="container px-5 h-100">
+        <div class="position-relative d-flex text-center mb-5 justify-content-center">
+            <h1 class="display-1 text-center">Projects</h1>
+        </div>
+
+        <div class="row p-2 justify-content-center" style="height: calc(100% - 6rem); overflow-y:auto;">
+            @foreach (var item in ProjectList)
+            {
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="">
+                                <img class="h-100 w-100" src="@item.ImagePath" alt="Avatar" style="opacity:0.6;">
+                                <div class="centered"><h1><b>@item.Name</b></h1></div>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p class="">@item.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

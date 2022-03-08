@@ -1,0 +1,26 @@
+﻿.card .card-header > img {
+  border-radius: 50%;
+  border: 8px solid #ffffff;
+  width: 100px;
+  margin: 0 auto;
+  /*        border-left-color: #ea1538;
+        border-right-color: #ea1538;*/ }
+
+.single-testimonial {
+  position: relative;
+  /*background: #000000;*/
+  /*padding: 55px 25px 35px;*/
+  border-radius: 3px;
+  z-index: 1;
+  opacity: .5;
+  transform: scale3d(0.8, 0.8, 1);
+  -webkit-transform: scale3d(0.8, 0.8, 1);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  /*margin: 50px 0px 0px;*/ }
+
+.owl-carousel .active.center .single-testimonial {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  -webkit-transform: scale3d(1, 1, 1); }

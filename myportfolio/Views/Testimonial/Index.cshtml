@@ -1,0 +1,47 @@
+﻿@{
+    List<myportfolio.Models.TestimonialModel> Testimonial = ViewData.ContainsKey("Testimonial") ? (List<myportfolio.Models.TestimonialModel>)ViewData["Testimonial"] : new List<myportfolio.Models.TestimonialModel>();
+}
+
+@section scripts {
+    <script src="~/Views/Testimonial/testimonial.js"></script>
+}
+
+<div class="resume-main h-100 w-100 section bg-dark-2">
+    <div class="container px-5 h-100">
+        <div class="position-relative d-flex text-center mb-5 justify-content-center">
+            <h1 class="display-1 text-center">Testimonial</h1>
+        </div>
+
+        <div class="owl-carousel owl-theme">
+            @foreach (var item in Testimonial)
+            {
+                <div class="card card-default single-testimonial" style="">
+                    <div class="card-header">
+                        <img src="@item.ImageSource" class="card-img-top" width="120" height="120" style="">
+                    </div>
+                    <div class="card-body">
+                        <h4>"@item.TagLine"</h4>
+                        <p class="card-text">@item.Description</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="@item.LinkedInLink" class=""><span class="fa fa-linkedin-square fa-2x"></span></a>
+                        </div>
+
+                    </div>
+                    <div class="card-footer muted text-center text-white">
+                        @item.Name
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        new Testimonial();
+    });
+
+</script>
+
+<link rel="stylesheet" href="~/Views/Testimonial/testimonial.css" />

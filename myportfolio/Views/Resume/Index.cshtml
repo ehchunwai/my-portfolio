@@ -1,0 +1,48 @@
+﻿@{
+    List<myportfolio.Models.MilestoneModel> Milestone = ViewData.ContainsKey("Milestone") ? (List<myportfolio.Models.MilestoneModel>)ViewData["Milestone"] : new List<myportfolio.Models.MilestoneModel>();
+}
+
+
+<div class="resume-main h-100 w-100 section bg-dark-2">
+    <div class="container px-5 h-100">
+        <div class="position-relative d-flex text-center mb-5 justify-content-center">
+            <h1 class="display-1 text-center">Resume</h1>
+        </div>
+
+        <div class="row p-2" style="height: calc(100% - 6rem); overflow-y:auto;">
+
+
+            @foreach (var item in Milestone)
+            {
+                <div class="col-6 mt-3">
+                    @await Html.PartialAsync("~/Views/Resume/_Milestone.cshtml", new ViewDataDictionary(new Microsoft.AspNetCore.Mvc.ModelBinding.EmptyModelMetadataProvider(),
+        new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary()) { { "Milestone", item } })
+                </div>
+            }
+
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .content {
+        height: calc(100% - 7rem);
+    }
+
+    /* .card-body {
+        height: calc(100% - 10rem);
+    }*/
+
+    .card-text {
+        line-height: 1.8rem;
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+/*    li {
+        line-height: 1.8rem;
+    }*/
+</style>
